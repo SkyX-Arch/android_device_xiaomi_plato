@@ -1,0 +1,37 @@
+on post-fs-data
+    # Thermal
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/boost
+    chown system system /sys/class/thermal/thermal_message/temp_state
+    chown system system /sys/class/thermal/thermal_message/balance_mode
+    chown system system /sys/class/thermal/thermal_message/charger_temp
+    chown system system /sys/class/power_supply/battery/constant_charge_current
+    chown cameraserver cameraserver /sys/class/thermal/thermal_message/flash_state
+    chmod 0664 /sys/class/power_supply/battery/constant_charge_current
+
+    # NFC
+    mkdir /data/vendor/nfc 0770 nfc nfc
+    chmod 0660 /dev/nq-nci
+    chown nfc nfc /dev/nq-nci
+    chmod 0660 /dev/p73
+    chown nfc nfc /dev/p73
+
+on boot
+    # Display feature sysfs node
+    chown system system /sys/class/mi_display/disp-DSI-0/disp_param
+    chmod 0664 /sys/class/mi_display/disp-DSI-0/disp_param
+    chown system system /sys/class/mi_display/disp-DSI-0/panel_info
+    chmod 0444 /sys/class/mi_display/disp-DSI-0/panel_info
+    chown system system /sys/class/mi_display/disp-DSI-0/wp_info
+    chmod 0444 /sys/class/mi_display/disp-DSI-0/wp_info
+    chown system system /sys/class/mi_display/disp-DSI-0/dynamic_fps
+    chmod 0444 /sys/class/mi_display/disp-DSI-0/dynamic_fps
+    chown system system /sys/class/mi_display/disp-DSI-0/doze_brightness
+    chmod 0664 /sys/class/mi_display/disp-DSI-0/doze_brightness
+    chown system system /sys/class/mi_display/disp-DSI-0/brightness_clone
+    chmod 0664 /sys/class/mi_display/disp-DSI-0/brightness_clone
+	# camera flash led
+	chown system system /sys/class/flashlight_core/flashlight/torchbrightness
+    chmod 0666 /sys/class/flashlight_core/flashlight/torchbrightness

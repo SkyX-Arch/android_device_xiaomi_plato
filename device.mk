@@ -14,6 +14,15 @@ PRODUCT_COPY_FILES += \
 # Call the MiuiCamera setup
 $(call inherit-product-if-exists, device/xiaomi/plato-miuicamera/device.mk)
 
+# Dolby
+$(call inherit-product-if-exists, hardware/dolby/dolby.mk)
+
+# LunarisDolby
+ifneq ($(wildcard hardware/dolby/dolby.mk),)
+PRODUCT_PACKAGES += \
+    LunarisDolby
+endif
+
 # Fingerprint
 TARGET_HAS_UDFPS := true
 

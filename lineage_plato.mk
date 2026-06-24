@@ -18,6 +18,8 @@ ifndef ANDROID_PRIV_KEYS_MK_INCLUDED
 $(call inherit-product, vendor/lineage-priv/keys/keys.mk)
 endif
 
+$(call inherit-product, hardware/dolby/dolby.mk)
+
 PRODUCT_MAINLINE_BLUETOOTH_SEPOLICY_DEV_CERTIFICATES := vendor/lineage-priv/keys/
 
 PRODUCT_BRAND := Xiaomi

@@ -6,13 +6,19 @@ The Xiaomi 12T is a MediaTek MT6895-based smartphone released by Xiaomi in Octob
 
 ## Device Information
 
-| Item           | Value                                  |
-| -------------- | -------------------------------------- |
-| Device         | Xiaomi 12T                             |
-| Codename       | plato                                  |
-| SoC            | MediaTek Dimensity 8100 Ultra (MT6895) |
-| Architecture   | ARM64                                  |
-| Launch Version | Android 12                             |
+## Device Specifications
+
+| Spec | Details |
+|------|---------|
+| SoC | MediaTek Dimensity 8100 Ultra (MT6895) |
+| CPU | Octa-core (4x Cortex-A78 @ 2.85 GHz & 4x Cortex-A55 @ 2.0 GHz) |
+| GPU | Mali-G610 MC6 |
+| Memory | 8GB LPDDR5 |
+| Storage | 128/256GB UFS 3.1 |
+| Battery | 5000 mAh |
+| Display | 6.67" AMOLED, 1220×2712, 120Hz |
+| Rear Camera | 108 MP + 8 MP + 2 MP |
+| Front Camera | 20 MP |
 
 ## Purpose
 

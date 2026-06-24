@@ -48,7 +48,7 @@ This device tree is currently used for:
 
 Special thanks to:
 
-* [The LineageOS Project]([https://github.com/XagaForge](https://github.com/LineageOS))
+* [The LineageOS Project](https://github.com/LineageOS)
 * [XagaForge](https://github.com/XagaForge)
 * [Archcloudy](https://github.com/archcloudy)
 * [crDroid Team](https://github.com/crdroidandroid)

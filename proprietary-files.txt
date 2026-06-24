@@ -818,3 +818,7 @@ vendor/firmware/aw8697_rtp_1.bin
 # Wi-Fi
 vendor/firmware/wifi.cfg
 vendor/firmware/txpowerctrl.cfg
+
+# MediaTek AI-PQ Models
+vendor/xiaomi/plato/proprietary/vendor/data/model/AIHDR.dla:vendor/data/model/AIHDR.dla
+vendor/xiaomi/plato/proprietary/vendor/data/model/scene_detection.dla:vendor/data/model/scene_detection.dla

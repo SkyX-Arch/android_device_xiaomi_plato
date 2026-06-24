@@ -1,32 +1,52 @@
-SPDX-FileCopyrightText: The LineageOS Project
+# Xiaomi 12T (plato)
 
-Device configuration for Xiaomi 12T
-=============================================================
+Device tree for Xiaomi 12T (plato).
 
-The Xiaomi 12T (codenamed _"plato"_) is an upper mid-range smartphone from Xiaomi.
+The Xiaomi 12T is a MediaTek MT6895-based smartphone released by Xiaomi in October 2022.
 
-It was announced and released in October 2022.
+## Device Information
 
-## Device specifications
+| Item           | Value                                  |
+| -------------- | -------------------------------------- |
+| Device         | Xiaomi 12T                             |
+| Codename       | plato                                  |
+| SoC            | MediaTek Dimensity 8100 Ultra (MT6895) |
+| Architecture   | ARM64                                  |
+| Launch Version | Android 12                             |
 
-Basic   | Spec Sheet
--------:|:-------------------------
-SoC     | Mediatek Dimensity 8100 Ultra (MT6895)
-CPU     | Octa-core (4x2.85 GHz Cortex-A78 & 4x2.0 GHz Cortex-A55)
-GPU     | Mali-G610 MC6
-Memory  | 8GB, LPDDR5
-Storage | 128/256GB, UFS 3.1
-Shipped Android Version | 12
-Battery | Non-removable Li-Po 5000 mAh battery
-Dimensions | 163.1 x 75.9 x 8.6 mm (6.42 x 2.99 x 0.34 in)
-Display Type | AMOLED, 68B colors, 120Hz, HDR10+, 500 nits (typ), 900 nits (peak)
-Display Size | 6.67 inches, 107.4 cm2 (~86.7% screen-to-body ratio)
-Display Resolution | 1220 x 2712 pixels, 20:9 ratio (~446 ppi density)
-Rear Camera 1 | 108 MP, f/1.7, 24mm (wide), 1/1.67", 0.64µm, PDAF, OIS
-Rear Camera 2 | 8 MP, f/2.2, 120˚ (ultrawide), 1/4.0", 1.12µm
-Rear Camera 3 | 2 MP, f/2.4, (macro)
-Front Camera | 20 MP, f/2.2, (wide), 1/3.47", 0.8µm
+## Purpose
 
-## Device picture
+This repository contains the device-specific configuration required to build Android-based ROMs for the Xiaomi 12T (plato).
 
-![Xiaomi 12T](https://i02.appmifile.com/898_operator_sg/26/08/2022/fc94660da1d6dd006f7589327bb72813.png "Xiaomi 12T in blue, white and black")
+## Supported ROMs
+
+This device tree is currently used for:
+
+* crDroid Android 16
+
+## Status
+
+* Android 16
+* SELinux Enforcing
+* OTA Support
+* User Builds
+* Release Keys Support
+
+## Device Image
+
+<p align="center">
+  <img src="https://i02.appmifile.com/898_operator_sg/26/08/2022/fc94660da1d6dd006f7589327bb72813.png" width="500" alt="Xiaomi 12T">
+</p>
+
+## Credits
+
+Special thanks to:
+
+* [The LineageOS Project]([https://github.com/XagaForge](https://github.com/LineageOS))
+* [XagaForge](https://github.com/XagaForge)
+* [Archcloudy](https://github.com/archcloudy)
+* [crDroid Team](https://github.com/crdroidandroid)
+
+## Maintainer
+
+SkyX-Arch

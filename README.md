@@ -28,7 +28,7 @@ This repository contains the device-specific configuration required to build And
 
 This device tree is currently used for:
 
-* crDroid Android 16
+* [crDroid Android 16](https://github.com/SkyX-Arch/crdroid-ota)
 
 ## Status
 

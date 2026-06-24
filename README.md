@@ -51,7 +51,7 @@ Special thanks to:
 * [The LineageOS Project](https://github.com/LineageOS)
 * [XagaForge](https://github.com/XagaForge)
 * [Archcloudy](https://github.com/archcloudy)
-* [crDroid Team](https://github.com/crdroidandroid)
+* [Xiaomi MT6895 Devs](https://github.com/xiaomi-mt6895-devs)
 
 ## Maintainer
 

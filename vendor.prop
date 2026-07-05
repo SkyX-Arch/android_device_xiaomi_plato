@@ -1,8 +1,82 @@
 # Bluetooth
 bluetooth.device.default_name=Xiaomi 12T
+# USB
+vendor.usb.product_string=Xiaomi 12T
 
-# Camera
-camera.disable_zsl_mode=1
+# ========================================================
+# ANDROID 16 HARDWARE & MEDIATEK CORNERSTONE (VENDOR)
+# ========================================================
+
+# Base Graphics Hardware Abstraction Layer (HAL)
+ro.hardware.egl=mali
+ro.hardware.vulkan=mali
+ro.hardware.hwcomposer=mtk_common
+ro.hardware.gralloc=common
+ro.vendor.composer_version=2.3
+ro.opengles.version=196610
+
+# MediaTek MiraVision Engine Activation (Stock Enhancements Restored)
+ro.vendor.mtk_pq_support=2
+ro.vendor.mtk_pq_color_mode=3
+ro.vendor.mtk_aal_support=1
+ro.vendor.pq.mtk_aal_support=1
+persist.vendor.sys.mtkaal.function=1
+ro.vendor.pq.mtk_dc_support=1
+ro.vendor.pq.mtk_caltm_support=1
+ro.vendor.pq.mtk_scltm_support=1
+ro.vendor.pq.mtk_mdp_ccorr_support=1
+ro.vendor.pq.mtk_disp_color_support=1
+ro.vendor.pq.mtk_disp_ccorr_support=1
+ro.vendor.pq.mtk_disp_gamma_support=1
+ro.vendor.pq.mtk_disp_c3d_support=1
+ro.vendor.pq.mtk_disp_tdshp_support=1
+ro.vendor.pq.mtk_disp_game_pq_support=1
+ro.vendor.pq.mtk_ds_support=1
+ro.vendor.pq.mtk_ultra_resolution_support=1
+ro.vendor.pq.mtk_clearzoom_support=1
+ro.vendor.pq.mtk_hfg_support=1
+ro.vendor.pq.mtk_pq_interface_support=1
+persist.vendor.sys.pq.disp.mi.soft.brightness=1
+persist.vendor.sys.pq.disp.ccorr.silky.brightness=0
+
+# Hardware Neural Networks & APU 580 Acceleration
+ro.vendor.mtk_nn_support=1
+ro.vendor.mtk_nn_baseline_support=1
+ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
+ro.vendor.mtk_nn_quant_preferred=1
+
+# Low-Level Audio HAL Config & Audio Dumps Disabled
+ro.vendor.audio.gain.support=true
+ro.vendor.audio.soundtrigger.wakeupword=5
+vendor.audio.spkcal.copy.inhal=true
+vendor.audio.usb.super_hifi=true
+vendor.audio.usb.iems.period_us=5000
+vendor.audiohal.telephonytx.type=2
+persist.vendor.audio.misound.disable=true
+persist.vendor.audiohal.aurisys.pcm_dump_on=0
+persist.vendor.audiohal.p2w_dump_on=0
+persist.vendor.audiohal.pcm_mixer_dump_on=0
+vendor.usbsph.dl.pcm.dump=0
+vendor.usbsph.ul.pcm.dump=0
+vendor.usbsph.srcaws.pcm.dump=0
+vendor.streamout.pcm.dump=0
+vendor.streamin.pcm.dump=0
+
+# Advanced Video Decoders & HDR Architecture
+media.c2.dmabuf.padding=3072
+ro.vendor.hdr10plus.enable=1
+ro.vendor.mtk_hdr_video_support=1
+ro.vendor.mtk_cuva_hdr_support=1
+ro.vendor.pq.mtk_ai_sdr_to_hdr_support=1
+ro.vendor.sdr2hdr.by.layer.support=true
+ro.vendor.mtk_sec_video_path_support=1
+ro.vendor.mtk_video_hevc_enc_support=1
+ro.vendor.mtk.c2.vdec.fmt.support.level=3
+vendor.mtk.vdec.waitkeyframeforplay=9
+ro.vendor.jpeg_decode_sw_opt=2
+ro.vendor.mtk_mvpu_security_support=0
+
+# Camera HAL Pipeline Buffers (Optimized for 108MP Sensor Output)
 persist.vendor.camera3.pipeline.bufnum.min.high_ram.imgo=7
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.imgo=6
 persist.vendor.camera3.pipeline.bufnum.base.imgo=4
@@ -18,6 +92,8 @@ persist.vendor.camera3.pipeline.bufnum.base.rsso=5
 persist.vendor.camera3.pipeline.bufnum.min.high_ram.fdyuv=5
 persist.vendor.camera3.pipeline.bufnum.min.low_ram.fdyuv=5
 persist.vendor.camera3.pipeline.bufnum.base.fdyuv=6
+
+# Core Device Camera Features
 ro.mtk_cam_stereo_camera_support=1
 ro.vendor.camera.aishutter.support=1
 ro.vendor.camera.directfdyuv.support=1
@@ -29,16 +105,64 @@ vendor.camera.mdp.cz.enable=1
 vendor.camera.mdp.dre.enable=1
 vendor.mtk.camera.app.fd.video=1
 
+# Multimedia Core Platform Features
+ro.vendor.mtk_aod_support=1
+ro.vendor.mml.mtk_mml_support=0
+ro.vendor.mtk_ovl_bringup=0
+
+# SMVR Slow-Motion Video Batching (Mali-G610 Max Width)
+ro.vendor.smvr.p2batch.fhd=8
+ro.vendor.smvr.p2batch.hd=16
+ro.vendor.smvr.p2batch.vga=32
+
+# MediaTek Low-Level Modem & Radio HAL (Vendor)
+persist.vendor.md_c2k_cap_dep_check=0
+persist.vendor.factory.GB2312=yes
+persist.vendor.mims_support=2
+persist.vendor.mtk_sim_switch_policy=2
+persist.vendor.radio.dynamic_sar=1
+persist.vendor.radio.fd.counter=150
+persist.vendor.radio.fd.off.counter=50
+persist.vendor.radio.fd.off.r8.counter=50
+persist.vendor.radio.fd.r8.counter=150
+persist.vendor.radio.flashless.fsm_cst=0
+persist.vendor.radio.flashless.fsm_rw=0
+persist.vendor.radio.flashless.fsm=0
+persist.vendor.radio.msimmode=dsds
+persist.vendor.radio.mtk_dsbp_support=3
+persist.vendor.radio.mtk_ps2_rat=N/L/W/G
+persist.vendor.radio.mtk_ps3_rat=G
+persist.vendor.radio.smart.data.switch=1
+persist.vendor.vonr_setting_support=1
+ro.vendor.md_prop_ver=1
+ro.vendor.mtk_c2k_lte_mode=2
+ro.vendor.mtk_c2k_support=1
+ro.vendor.mtk_eccci_c2k=1
+ro.vendor.mtk_external_sim_only_slots=0
+ro.vendor.mtk_external_sim_support=1
+ro.vendor.mtk_gwsd_capability=2
+ro.vendor.mtk_lte_support=1
+ro.vendor.mtk_mcf_support=1
+ro.vendor.mtk_md_world_mode_support=1
+ro.vendor.mtk_mobile_management=1
+ro.vendor.mtk_protocol1_rat_config=N/Lf/Lt/W/G
+ro.vendor.mtk_ps1_rat=N/Lf/Lt/W/G
+ro.vendor.mtk_ril_mode=c6m_1rild
+ro.vendor.mtk_rild_read_imsi=1
+ro.vendor.mtk_sim_card_onoff=3
+ro.vendor.mtk_sim_hot_swap_common_slot=1
+ro.vendor.mtk_world_phone_policy=0
+ro.vendor.num_md_protocol=2
+ro.vendor.radio.5g=3
+ro.vendor.radio.features_common=2
+ro.vendor.radio.max.multisim=dsds
+ro.vendor.sim_me_lock_mode=3
+ro.vendor.mtk_mipc_support=1
+ro.vendor.mtk_fd_support=1
+# Hint to Android Framework about high-speed memory config
+ro.vendor.config.zram=true
+ro.vendor.config.high_perf=true
+
 # Fingerprint
 persist.vendor.fingerprint.type=udfps_optical
 persist.vendor.fingerprint.sensor_location=610|2444|114
-
-# SurfaceFlinger
-persist.sys.sf.color_mode=9
-persist.sys.sf.color_saturation=1.0
-persist.sys.sf.native_mode=2
-ro.surface_flinger.set_idle_timer_ms=0
-ro.surface_flinger.use_content_detection_for_refresh_rate=false
-
-# USB
-vendor.usb.product_string=Xiaomi 12T

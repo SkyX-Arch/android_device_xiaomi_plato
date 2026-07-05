@@ -18,6 +18,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/m
 BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD) $(BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD)
 
 # Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
@@ -30,5 +31,4 @@ include device/xiaomi/mt6895-common/BoardConfigCommon.mk
 
 # Inherit the proprietary files
 include vendor/xiaomi/plato/BoardConfigVendor.mk
--include device/xiaomi/plato-miuicamera/BoardConfig.mk
 

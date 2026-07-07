@@ -11,9 +11,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-# Call the MiuiCamera setup
-$(call inherit-product-if-exists, device/xiaomi/plato-miuicamera/device.mk)
-
 # Dolby
 $(call inherit-product-if-exists, hardware/dolby/dolby.mk)
 
@@ -22,6 +19,11 @@ ifneq ($(wildcard hardware/dolby/dolby.mk),)
 PRODUCT_PACKAGES += \
     LunarisDolby
 endif
+
+# Enabling hardware acceleration for interface rendering
+PRODUCT_PROPERTY_OVERRIDES += \
+    renderthread.skia.reduceopstasksplitting=true \
+    debug.renderengine.backend=gles
 
 # Fingerprint
 TARGET_HAS_UDFPS := true
@@ -79,3 +81,6 @@ $(call inherit-product, device/xiaomi/mt6895-common/mt6895.mk)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/plato/plato-vendor.mk)
+
+# Call the GCAM setup
+#$(call inherit-product, vendor/xiaomi/plato-GCAM/plato-GCAM-vendor.mk)

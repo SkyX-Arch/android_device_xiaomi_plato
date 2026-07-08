@@ -20,6 +20,21 @@ endif
 
 $(call inherit-product, hardware/dolby/dolby.mk)
 
+# Axion Device Configuration
+AXION_MAINTAINER := SkyX-Arch
+AXION_PROCESSOR := MediaTek Dimensity 8100 Ultra
+TARGET_INCLUDES_LOS_PREBUILTS := true
+PERF_GOV_SUPPORTED := true
+PERF_DEFAULT_GOV := schedutil
+PERF_ANIM_OVERRIDE := true
+TORCH_STR_SUPPORTED := true
+TARGET_NEEDS_DOZE_FIX := true
+
+# Graphics & Display
+TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTED_REFRESH_RATES := 60,90,120
+HBM_SUPPORTED := false
+
 PRODUCT_MAINLINE_BLUETOOTH_SEPOLICY_DEV_CERTIFICATES := vendor/lineage-priv/keys/
 
 PRODUCT_BRAND := Xiaomi

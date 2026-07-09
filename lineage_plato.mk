@@ -22,7 +22,7 @@ $(call inherit-product, hardware/dolby/dolby.mk)
 
 # Axion Device Configuration
 AXION_MAINTAINER := SkyX-Arch
-AXION_PROCESSOR := MediaTek Dimensity 8100 Ultra
+AXION_PROCESSOR := MediaTek_Dimensity_8100_Ultra_(MT6895)_(5nm)
 TARGET_INCLUDES_LOS_PREBUILTS := true
 PERF_GOV_SUPPORTED := true
 PERF_DEFAULT_GOV := schedutil

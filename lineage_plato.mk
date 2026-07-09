@@ -50,4 +50,5 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=Xiaomi/plato_ru/plato:12/SP1A.210812.016/OS2.0.209.0.VLQRUXM:user/release-keys \
-    DeviceProduct=$(PRODUCT_SYSTEM_NAME)
+    SystemName=plato_global \
+    SystemDevice=plato

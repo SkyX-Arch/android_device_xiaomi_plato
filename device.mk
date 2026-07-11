@@ -31,7 +31,8 @@ TARGET_HAS_UDFPS := true
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    Tag
+    Tag \
+    AxDiagnostics #Fixing an error made by the firmware developers: for some reason, a system service was missing, causing the system to crash.
 
 PRODUCT_PACKAGES += \
     android.hardware.nfc-service.nxp

@@ -433,4 +433,12 @@
 
     <!-- Whether to disable Smart Pixels on UDFPS -->
     <bool name="config_disableSmartPixelsOnUDFPS">true</bool>
+
+    <bool name="config_satellite_supported">false</bool>
+
+    <!-- Disables the kernel's retention of aggressive wakelocks during application initialization -->
+    <bool name="config_keep_zygote_reboot_on_error">false</bool>
+
+    <!-- Disables LinkLayerStats polling if the Wi-Fi driver returns an error-->
+    <bool name="config_wifi_link_layer_stats_supported">false</bool>
 </resources>

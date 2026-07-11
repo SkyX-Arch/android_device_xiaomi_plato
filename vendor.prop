@@ -166,3 +166,7 @@ ro.vendor.config.high_perf=true
 # Fingerprint
 persist.vendor.fingerprint.type=udfps_optical
 persist.vendor.fingerprint.sensor_location=610|2444|114
+
+# Scroll Optimiser
+persist.sys.perf.scroll_opt=true
+persist.sys.perf.scroll_opt.heavy_app=1

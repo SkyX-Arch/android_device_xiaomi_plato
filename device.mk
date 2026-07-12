@@ -26,7 +26,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.renderer=skiavk \
     debug.renderengine.backend=threaded \
     renderthread.skia.reduceopstasksplitting=true \
-    ro.dalvik.vm.enable_uffd_gc=false
+    ro.dalvik.vm.enable_uffd_gc=false \
+    dalvik.vm.dex2oat-filter=verify \
+    dalvik.vm.image-dex2oat-filter=verify \
+    pm.dexopt.bg-dexopt=verify
+
 
 # Fingerprint
 TARGET_HAS_UDFPS := true

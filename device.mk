@@ -22,8 +22,11 @@ endif
 
 # Enabling hardware acceleration for interface rendering
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.skip_hw_image_decoding=true \
+    debug.hwui.renderer=skiavk \
+    debug.renderengine.backend=threaded \
     renderthread.skia.reduceopstasksplitting=true \
-    debug.renderengine.backend=gles
+    ro.dalvik.vm.enable_uffd_gc=false
 
 # Fingerprint
 TARGET_HAS_UDFPS := true

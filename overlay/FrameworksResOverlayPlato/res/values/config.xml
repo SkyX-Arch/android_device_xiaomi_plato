@@ -441,4 +441,9 @@
 
     <!-- Disables LinkLayerStats polling if the Wi-Fi driver returns an error-->
     <bool name="config_wifi_link_layer_stats_supported">false</bool>
+
+    <!-- Disables the XR/VR subsystem to prevent Aconfig Storage crashes in WebView -->
+    <bool name="config_has_xr_device_config">false</bool>
+    <bool name="config_vr_mode_supported">false</bool>
+    <string name="config_xr_device_service_package" translatable="false"></string>
 </resources>

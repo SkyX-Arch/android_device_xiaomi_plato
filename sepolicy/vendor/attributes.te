@@ -1,0 +1,34 @@
+# Camera
+attribute vendor_hal_misensor_camera;
+attribute vendor_hal_misensor_camera_client;
+attribute vendor_hal_misensor_camera_server;
+attribute vendor_persist_type;
+type hal_quickcamera, domain;
+attribute hal_quickcamera_client;
+attribute hal_quickcamera_server;
+
+# Display
+attribute vendor_hal_display_color;
+attribute vendor_hal_display_color_client;
+attribute vendor_hal_display_color_server;
+
+attribute vendor_hal_display_postproc;
+attribute vendor_hal_display_postproc_client;
+attribute vendor_hal_display_postproc_server;
+
+# Displayfeature
+attribute vendor_hal_displayfeature_xiaomi;
+attribute vendor_hal_displayfeature_xiaomi_server;
+attribute vendor_hal_displayfeature_xiaomi_client;
+
+# Touchfeature
+attribute hal_touchfeature_xiaomi;
+attribute hal_touchfeature_xiaomi_client;
+attribute hal_touchfeature_xiaomi_server;
+type hal_touchfeature_xiaomi_default, domain;
+
+# CIT Sensor Service
+attribute vendor_hal_citsensorservice_xiaomi;
+attribute vendor_hal_citsensorservice_xiaomi_client;
+attribute vendor_hal_citsensorservice_xiaomi_server;
+type hal_hypsys_vendor, domain;

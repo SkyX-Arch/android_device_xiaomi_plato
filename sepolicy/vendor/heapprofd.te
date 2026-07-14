@@ -1,0 +1,9 @@
+allow heapprofd untrusted_app:dir { search read open };
+allow heapprofd untrusted_app:file { read open };
+allow heapprofd untrusted_app:process { getattr signal };
+allow traced_perf untrusted_app:dir { search read open };
+allow traced_perf untrusted_app:file { read open };
+allow traced_perf untrusted_app:process { getattr };
+allow untrusted_app heapprofd_socket:sock_file write;
+allow untrusted_app heapprofd:unix_stream_socket connectto;
+

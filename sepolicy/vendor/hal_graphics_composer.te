@@ -1,0 +1,28 @@
+type vendor_hal_hwcextension_xiaomi_service, hal_service_type, protected_service, service_manager_type;
+type vendor_miclstc_service, vndservice_manager_type;
+
+get_prop(hal_graphics_composer, vendor_displayfeature_prop)
+get_prop(hal_graphics_composer_default, vendor_displayfeature_prop)
+get_prop(hal_graphics_composer_default, vendor_fp_prop)
+set_prop(hal_graphics_composer_default, vendor_displayfeature_prop)
+
+allow hal_graphics_composer_client vendor_hal_hwcextension_xiaomi_service:service_manager find;
+allow hal_graphics_composer_default vendor_displayfeature_device:chr_file { ioctl open read };
+allow hal_graphics_composer_default vendor_hal_citsensorservice_xiaomi_default:binder { call transfer };
+allow hal_graphics_composer_default vendor_hal_citsensorservice_xiaomi_default:fd *;
+allow hal_graphics_composer_default vendor_hal_citsensorservice_xiaomi_service:service_manager find;
+allow hal_graphics_composer_default vendor_hal_displayfeature_xiaomi_service:service_manager find;
+allow hal_graphics_composer_default vendor_miclstc_service:service_manager { add find };
+allow hal_graphics_composer_default vendor_mistcdisplay_service:service_manager { add find };
+allow hal_graphics_composer_default vendor_sysfs_displayfeature:dir { open read search };
+allow hal_graphics_composer_default vendor_sysfs_displayfeature:file { open read write };
+allow hal_graphics_composer_server vendor_hal_hwcextension_xiaomi_service:service_manager { add find };
+allow hal_graphics_composer_default graphics_device:chr_file { read write open ioctl };
+allow hal_graphics_composer_default proc_ged:file ioctl;
+allowxperm hal_graphics_composer_default proc_ged:file ioctl { 0x6700-0x6710 0x6764-0x676b 0x67c8 };
+allow hal_graphics_composer_default proc_perfmgr:file ioctl;
+allowxperm hal_graphics_composer_default proc_perfmgr:file ioctl { 0x6701-0x6703 0x6705 0x670f-0x6710 };
+allow hal_graphics_composer_default vendor_displayfeature_device:chr_file r_file_perms;
+# Allow access to AI PQ model files
+allow hal_graphics_composer_default vendor_configs_file:file { read open getattr map };
+allow hal_graphics_composer_default vendor_configs_file:dir { read open search getattr };

@@ -1,0 +1,14 @@
+
+# Suppress denials from vendor blobs reading system props (no safe allow exists)
+dontaudit hal_audio_default default_prop:file { read open };
+dontaudit rild default_prop:file { read open };
+dontaudit rild vendor_default_prop:property_service set;
+dontaudit mtk_hal_camera vendor_default_prop:property_service set;
+dontaudit hal_power_default hal_thermal_service:service_manager find;
+dontaudit hal_mtdservice_default self:capability { dac_override dac_read_search };
+dontaudit vendor_batterysecret self:capability dac_override;
+dontaudit vold persist_data_file:dir read;
+dontaudit vendor_init vendor_userdir_file:dir write;
+dontaudit vendor_init default_prop:property_service set;
+dontaudit audioserver vendor_default_prop:file read;
+dontaudit mtk_hal_camera default_prop:file read;

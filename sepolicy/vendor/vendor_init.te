@@ -1,0 +1,9 @@
+set_prop(vendor_init, vendor_batterysecret_prop)
+set_prop(vendor_init, vendor_sensors_prop)
+
+rw_dir_file(vendor_init, sysfs_leds)
+
+allow vendor_init proc:file rw_file_perms;
+allow vendor_init proc_sched_migration_cost_ns:file rw_file_perms;
+allow vendor_init sysfs_devices_block:file { setattr rw_file_perms };
+allow vendor_init proc_swappiness:file rw_file_perms;

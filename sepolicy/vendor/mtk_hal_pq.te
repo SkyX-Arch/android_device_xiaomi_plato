@@ -1,0 +1,7 @@
+type vendor_displayfeature_sysfs, sysfs_type, fs_type;
+
+allow mtk_hal_pq vendor_displayfeature_sysfs:file rw_file_perms;
+
+# Allow access to AI PQ model files
+allow mtk_hal_pq vendor_configs_file:file { read open getattr map };
+allow mtk_hal_pq vendor_configs_file:dir { read open search getattr };

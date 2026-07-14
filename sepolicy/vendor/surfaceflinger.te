@@ -1,0 +1,6 @@
+allow surfaceflinger graphics_device:chr_file { read write open ioctl };
+allow surfaceflinger vendor_fingerprint_sysfs:file rw_file_perms;
+allow surfaceflinger proc_ged:file ioctl;
+allowxperm surfaceflinger proc_ged:file ioctl { 0x6700-0x6710 0x6764-0x676b 0x67c8 };
+allow surfaceflinger proc_perfmgr:file ioctl;
+allowxperm surfaceflinger proc_perfmgr:file ioctl { 0x6701-0x6703 0x6705 0x670f-0x6710 };

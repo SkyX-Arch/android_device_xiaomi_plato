@@ -1,0 +1,6 @@
+allow init proc_dirty:file rw_file_perms;
+allow init proc:file rw_file_perms;
+allow init proc_sched_migration_cost_ns:file rw_file_perms;
+allow init proc_swappiness:file rw_file_perms;
+allow init sysfs_devices_block:file { setattr rw_file_perms };
+allow init hal_fingerprint_default:process ptrace;

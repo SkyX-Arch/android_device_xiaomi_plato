@@ -1,0 +1,7 @@
+# Allow CachedAppOptimizer to search /proc/irq
+allow system_server proc_irq:dir search;
+allow system_server cgroup:file write;
+allow system_server cgroup_v2:file write;
+allow lmkd proc_overcommit_memory:file r_file_perms;
+allow system_server adb_data_file:dir search;
+

@@ -1,0 +1,1 @@
+allow extra_free_kbytes proc_overcommit_memory:file r_file_perms;

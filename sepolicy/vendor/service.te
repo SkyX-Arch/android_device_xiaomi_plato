@@ -1,0 +1,21 @@
+# Service types for vendor HAL services
+
+type hal_hypsys_vendor_service, vndservice_manager_type;
+
+type vendor_hal_display_config_hwservice, hwservice_manager_type;
+type vendor_hal_vnddisplayconfig_service, service_manager_type;
+type vendor_qdisplay_service, service_manager_type;
+type vendor_mistcdisplay_service, service_manager_type;
+
+type hal_touchfeature_xiaomi_service, service_manager_type;
+
+# Xiaomi-specific camera/mivi services
+type hal_misys_service, service_manager_type;
+type hal_campostproc_service, service_manager_type;
+
+# Camera-related service types (used by hal_camera and referenced in service_contexts)
+type hal_aidlbgservice_service, service_manager_type;
+type hal_camera_aon_service, service_manager_type;
+type hal_dynamic_camera_service, service_manager_type;
+type vendor_intentaware_service, service_manager_type;
+type hal_xiaomi_campostproc_hwservice, hwservice_manager_type;

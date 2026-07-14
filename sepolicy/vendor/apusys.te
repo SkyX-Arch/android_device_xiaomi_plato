@@ -1,0 +1,15 @@
+# APU (AI Processing Unit) - MediaTek NPU
+# sysfs access for APU status and control
+
+# sysfs nodes
+allow hal_camera_default sysfs_apusys:file r_file_perms;
+allow hal_camera_default sysfs_apusys:dir r_dir_perms;
+allow cameraserver sysfs_apusys:file r_file_perms;
+allow cameraserver sysfs_apusys:dir r_dir_perms;
+
+# APU queue sysfs
+allow hal_camera_default sysfs_apusys_queue:file r_file_perms;
+allow hal_camera_default sysfs_apusys_queue:dir r_dir_perms;
+
+# APU proc nodes for debug/dump
+allow hal_camera_default { proc_type -proc_kallsyms -proc_security }:file { getattr open read ioctl lock map watch watch_reads };

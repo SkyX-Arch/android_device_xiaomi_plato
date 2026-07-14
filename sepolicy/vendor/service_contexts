@@ -1,0 +1,25 @@
+# Service contexts for HIDL/AIDL vendor services
+
+# Camera services
+vendor.xiaomi.hardware.aidl.intentaware.IIntentAwareService/default    u:object_r:vendor_intentaware_service:s0
+vendor.xiaomi.hardware.aidlbgservice.IBGService/default                u:object_r:hal_aidlbgservice_service:s0
+vendor.xiaomi.hardware.aon.IAlwaysOn/miaonservicehal                   u:object_r:hal_camera_aon_service:s0
+vendor.xiaomi.hardware.camera.injection.ICameraInjectionService/default u:object_r:hal_dynamic_camera_service:s0
+vendor.xiaomi.hardware.camera.synthetic.IVirtualCameraRegistrar/default u:object_r:hal_dynamic_camera_service:s0
+vendor.xiaomi.hardware.quickcamera.IQuickCameraService/default         u:object_r:hal_quickcamera_service:s0
+vendor.xiaomi.sensor.camera.IMiCam/default                             u:object_r:vendor_hal_misensor_camera_service:s0
+
+# MIVI / MiSys services
+vendor.xiaomi.hardware.misys@1.0::IMiSys                               u:object_r:hal_misys_service:s0
+vendor.xiaomi.hardware.misys@2.0::IMiSys                               u:object_r:hal_misys_service:s0
+vendor.xiaomi.hardware.campostproc@1.0::IMiPostProcService             u:object_r:hal_campostproc_service:s0
+
+# Citsensor service
+vendor.xiaomi.sensor.citsensorservice.ICitSensorService/default        u:object_r:vendor_hal_citsensorservice_xiaomi_service:s0
+
+# Displayfeature services
+vendor.xiaomi.hardware.display.mihwcextension.IMiHwcExtension/default  u:object_r:vendor_hal_hwcextension_xiaomi_service:s0
+vendor.xiaomi.hardware.displayfeature_aidl.IDisplayFeature/default     u:object_r:vendor_hal_displayfeature_xiaomi_service:s0
+
+# Touchfeature service
+vendor.xiaomi.hw.touchfeature.ITouchFeature/default                   u:object_r:hal_touchfeature_xiaomi_service:s0

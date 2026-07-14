@@ -1,0 +1,66 @@
+binder_call(hal_camera_default, platform_app)
+# Camera Properties (Recording)
+set_prop(hal_camera_default, vendor_camera_p3enable_prop)
+set_prop(hal_camera_default, vendor_camera_sensor_prop)
+set_prop(hal_camera_default, vendor_camera_xdrversion_prop)
+
+# Camera Properties (Reading)
+get_prop(hal_camera_default, vendor_camera_sensor_prop)
+get_prop(hal_camera_default, bpf_progs_loaded_prop)
+
+# Device access
+allow hal_camera_default camlog_device:chr_file r_file_perms;
+allow hal_camera_default vendor_displayfeature_device:chr_file rw_file_perms;
+allow hal_camera_default vendor_touchfeature_device:chr_file r_file_perms;
+
+# Camera data files (mialgo_basic, CPU cache, etc.)
+allow hal_camera_default vendor_camera_data_file:dir create_dir_perms;
+allow hal_camera_default vendor_camera_data_file:file create_file_perms;
+allow hal_camera_default vendor_camera_data_file:sock_file create_file_perms;
+allow hal_camera_default vendor_camera_data_file:lnk_file create_file_perms;
+
+# APU / NPU access for AI algorithms
+allow hal_camera_default apusys_device:chr_file rw_file_perms;
+
+# Service manager permissions for camera services
+allow hal_camera_client hal_aidlbgservice_service:service_manager find;
+allow hal_camera_client hal_quickcamera_service:service_manager find;
+
+# Symlinks in /vendor
+allow hal_camera_default vendor_file:lnk_file r_file_perms;
+allow hal_camera_default vendor_configs_file:file r_file_perms;
+
+# Thermal management
+allow hal_camera_default sys_thermal_flash_state:file r_file_perms;
+allow hal_camera_default sys_thermal_torch_real_level:file r_file_perms;
+
+# misc file access
+allow hal_camera_default mnt_vendor_file:dir r_dir_perms;
+allow hal_camera_default sysfs_csiphy_umd_paras:file r_file_perms;
+allow hal_camera_default sysfs_csiphy_umd_paras:dir r_dir_perms;
+allow hal_camera_default crossbuild_vendor_file:dir r_dir_perms;
+allow hal_camera_default crossbuild_vendor_file:file r_file_perms;
+
+
+# Capabilities
+allow hal_camera_default self:capability fowner;
+allow hal_camera_default self:capability ipc_lock;
+
+# Interaction with other domains
+hal_client_domain(hal_camera_default, hal_power)
+add_hwservice(hal_camera_default, hal_xiaomi_campostproc_hwservice)
+
+# BSP log access
+allow hal_camera_default vendor_bsp_data_log_file:dir r_dir_perms;
+allow hal_camera_default vendor_bsp_data_log_file:file r_file_perms;
+
+# Service manager lookup for platform_app (MiuiCamera)
+allow platform_app hal_aidlbgservice_service:service_manager find;
+allow platform_app hal_misys_service:service_manager find;
+allow platform_app hal_campostproc_service:service_manager find;
+allow platform_app hal_quickcamera_service:service_manager find;
+
+
+binder_call(hal_camera_default, platform_app)
+r_dir_file(platform_app, vendor_configs_file)
+

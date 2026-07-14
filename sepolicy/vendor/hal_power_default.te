@@ -1,0 +1,28 @@
+type vendor_touchfeature_device, dev_type;
+type custom_powerhint_file, file_type, vendor_file_type;
+
+allow hal_power_default vendor_touchfeature_device:chr_file rw_file_perms;
+allow hal_power_default vendor_configs_file:dir r_dir_perms;
+allow hal_power_default vendor_configs_file:file r_file_perms;
+allow hal_power_default custom_powerhint_file:dir r_dir_perms;
+allow hal_power_default custom_powerhint_file:file r_file_perms;
+r_dir_file(hal_power_default, sysfs_ged)
+
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+
+allow hal_power_default cgroup:file r_file_perms;
+allow hal_power_default cgroup:dir r_dir_perms;
+
+# To access display idle state
+allow hal_power_default vendor_displayfeature_sysfs:file r_file_perms;
+
+#GPU
+allow hal_power_default sysfs_ged:file w_file_perms;
+allow hal_power_default vendor_sysfs_gpu:dir search;
+allow hal_power_default vendor_sysfs_gpu:file rw_file_perms;
+allow hal_power_default sysfs_gpu:dir r_dir_perms;
+allow hal_power_default sysfs_gpu:file rw_file_perms;
+
+allow hal_power_default sysfs_batteryinfo:file r_file_perms;
+allow hal_power_default sysfs_batteryinfo:dir r_dir_perms;
+allow hal_power_default sysfs_batteryinfo:dir search;

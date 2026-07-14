@@ -1,0 +1,3 @@
+# Allow ueventd to set process priority (sys_nice)
+# Required for user builds - denied with permissive=0 otherwise
+allow ueventd self:capability sys_nice;

@@ -1,0 +1,10 @@
+# FM Radio
+get_prop(system_app, vendor_mtk_wmt_prop)
+get_prop(system_app, vendor_mtk_default_prop)
+
+# Thermal Access for XiaomiParts
+allow system_app sysfs_therm:dir search;
+allow system_app sysfs_therm:file rw_file_perms;
+allow system_app cgroup:dir { search read };
+allow system_app cgroup:file { open read write };
+allow vold_prepare_subdirs proc_overcommit_memory:file r_file_perms;

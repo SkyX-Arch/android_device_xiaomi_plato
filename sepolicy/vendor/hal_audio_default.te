@@ -1,0 +1,11 @@
+type audio_socket, file_type;
+
+r_dir_file(hal_audio_default, persist_data_file)
+
+allow hal_audio_default audio_socket:sock_file rw_file_perms;
+allow hal_audio_default hf_manager_device:chr_file rw_file_perms;
+allow hal_audio_default sensors_device:chr_file rw_file_perms;
+allow hal_audio_default vendor_configs_file:dir r_dir_perms;
+allow hal_audio_default vendor_configs_file:file r_file_perms;
+
+r_dir_file(audioserver, vendor_configs_file)

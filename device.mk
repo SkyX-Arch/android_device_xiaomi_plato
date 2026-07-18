@@ -10,7 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Dalvik VM Configuration
-$(call inherit-product, frameworks/native/build/phone-xhdpi-8192-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -238,6 +238,7 @@ PRODUCT_COPY_FILES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    chipinfo \
     init.project.rc \
     fstab.mt6895 \
     fstab.mt6895.vendor_ramdisk \
@@ -394,6 +395,9 @@ $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.
 # Wi-Fi
 PRODUCT_CFI_INCLUDE_PATHS += hardware/mediatek/wlan/wpa_supplicant_8_lib
 
+PRODUCT_COPY_FILES += \
+$(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
+
 PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
@@ -401,9 +405,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
-
-PRODUCT_COPY_FILES += \
-$(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/plato/plato-vendor.mk)

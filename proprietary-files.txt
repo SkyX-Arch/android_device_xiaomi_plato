@@ -191,10 +191,6 @@ vendor/firmware/soc7_0_ram_mcu_1b_t_1_hdr.bin|b33fa0d812d4371192c632243902f94ac7
 # ConsumerIR
 vendor/lib64/hw/consumerir.common.so
 
-# Chipinfo
-vendor/bin/chipinfo
-vendor/etc/init/chipinfo_init.rc
-
 # Audio Firmware
 vendor/firmware/cs35l41-delta-rcv-handsfree.txt
 vendor/firmware/cs35l41-delta-rcv-music.txt

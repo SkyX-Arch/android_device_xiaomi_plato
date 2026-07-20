@@ -80,3 +80,4 @@ ro.telephony.iwlan_operation_mode=AP-assisted
 ro.telephony.sim.count=2
 telephony.active_modems.max_count=2
 telephony.lteOnCdmaDevice=1
+ro.lunaris.maintainer=SkyX-Arch

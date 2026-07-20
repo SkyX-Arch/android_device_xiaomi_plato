@@ -213,6 +213,8 @@ $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,fal
 # Media
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media,$(TARGET_COPY_OUT_VENDOR)/etc)
+    $(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
+    $(call soong_config_set,surfaceflinger,frame_rate_category_min,60)
 
 # Overlay
 PRODUCT_PACKAGES += \

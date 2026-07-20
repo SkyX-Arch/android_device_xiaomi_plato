@@ -18,7 +18,8 @@ AB_OTA_PARTITIONS += \
     vendor_boot \
     vbmeta \
     vbmeta_system \
-    vbmeta_vendor
+    vbmeta_vendor \
+    dtbo
 
 # Architecture
 TARGET_ARCH := arm64
@@ -62,6 +63,9 @@ OVERRIDE_ENABLE_MEMFD := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# DTBO
+BOARD_KERNEL_SEPARATED_DTBO := true
+
 #Art
 PRODUCT_ART_TARGET_BOOT_IMAGE_DEXPREOPT := true
 DEX2OAT_TARGET_ARCH := arm64
@@ -89,7 +93,8 @@ TARGET_KERNEL_CONFIG := \
 	vendor/$(PRODUCT_DEVICE).config
 
 TARGET_KERNEL_DTB := \
-    vendor/mediatek/mt6895.dtb
+    vendor/mediatek/mt6895.dtb \
+    vendor/mediatek/$(PRODUCT_DEVICE).dtbo
 
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 

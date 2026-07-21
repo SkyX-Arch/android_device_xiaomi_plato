@@ -59,11 +59,11 @@ class ThermalSettingsActivity : CollapsingToolbarBaseActivity() {
         AlertDialog.Builder(this)
             .setTitle(R.string.thermal_reset)
             .setMessage(R.string.thermal_reset_message)
-            .setPositiveButton(android.R.string.yes) { _, _ ->
+            .setPositiveButton(android.R.string.ok) { _, _ ->
                 thermalUtils.resetProfiles()
                 recreate()
             }
-            .setNegativeButton(android.R.string.no, null)
+            .setNegativeButton(android.R.string.cancel, null)
             .show()
     }
 

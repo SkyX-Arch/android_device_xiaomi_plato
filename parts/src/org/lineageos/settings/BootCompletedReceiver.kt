@@ -19,7 +19,7 @@ class BootCompletedReceiver : BroadcastReceiver() {
         Log.d(TAG, "Received intent: ${intent.action}")
         if (intent.action != Intent.ACTION_LOCKED_BOOT_COMPLETED) return
 
-        Log.i(TAG, "Boot completed, starting service")
+        Log.i(TAG, "Boot completed, starting services")
         ThermalUtils.getInstance(context).startService()
     }
 

@@ -141,7 +141,7 @@ private constructor(
         val id: Int,
         val config: String,
         val prefix: String,
-        @StringRes val label: Int,
+        @param:StringRes val label: Int,
     ) {
         BENCHMARK(
             0,

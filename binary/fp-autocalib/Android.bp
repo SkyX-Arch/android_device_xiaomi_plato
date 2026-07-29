@@ -1,0 +1,30 @@
+// Build rules for the fp-autocalib vendor binaries.
+cc_binary {
+    name: "fp-autocalib",
+    srcs: ["fp-autocalib.cpp"],
+
+    vendor: true,
+
+    shared_libs: [
+        "libbase",
+        "libdl",
+        "liblog",
+    ],
+
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Wno-unused-parameter",
+    ],
+}
+
+// sh_binary installs the gate script at /vendor/bin/<filename:>. The
+// module name (without .sh) is what goes into PRODUCT_PACKAGES.
+sh_binary {
+    name: "fp_autocalib_gate",
+    src: "fp-autocalib-gate.sh",
+
+    vendor: true,
+
+    filename: "fp-autocalib-gate.sh",
+}

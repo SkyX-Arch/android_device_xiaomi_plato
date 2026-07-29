@@ -319,3 +319,25 @@ on post-fs-data
     chmod 0600 /mnt/vendor/persist/goodix/gf_otp_0.so_bak
     chmod 0600 /mnt/vendor/persist/goodix/gf_persist.so
     chmod 0600 /mnt/vendor/persist/goodix/gf_persist.so_bak
+
+# === fp-autocalib: aftermarket-display auto-recalibration ===
+# When the user has replaced the display panel with an aftermarket
+# unit, Goodix fingerprint factory-calibration files left over from
+# the original panel must be wiped and the sensor re-trained. Stock
+# MIUI exposes this through Engineering Mode (*#*#6484#*#*). Our gate
+# script achieves the same outcome automatically: on every boot it
+# compares the current DRM panel identity against the persisted one
+# and, if they differ, wipes the calibration cache and invokes the
+# fp-autocalib helper (which calls libgf_hal.so::factoryCalibrate()
+# via dlsym).
+
+service fp-autocalib-gate /vendor/bin/sh /vendor/bin/fp-autocalib-gate.sh
+    class core
+    user root
+    group system
+    oneshot
+    disabled
+    seclabel u:r:vendor_fp_autocalib:s0
+
+on property:sys.boot_completed=1
+    start fp-autocalib-gate

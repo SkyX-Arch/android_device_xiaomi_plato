@@ -35,6 +35,11 @@ endif
 # Fingerprint
 TARGET_HAS_UDFPS := true
 
+# fp-autocalib: aftermarket-display auto-recalibration helper
+PRODUCT_PACKAGES += \
+    fp-autocalib \
+    fp_autocalib_gate
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \

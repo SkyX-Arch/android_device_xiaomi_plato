@@ -1,0 +1,33 @@
+# fp-autocalib — aftermarket-display auto-recalibration daemon.
+# Runs as a vendor init service, dlopen()s libgf_hal.so to invoke
+# factoryCalibrate(), and wipes stale Goodix calibration data when
+# the active display panel is detected to have changed.
+#
+# NOTE: when shell/system_file/device:chr_file exec rules were first
+# added, they were intended to let the gate script's helpers run; those
+# rules now violate Treble neverallows (domain.te 753, 1212, 1286, 1521)
+# and have been removed. See init.fingerprint.rc if the gate service
+# needs to be re-context-switched (`seclabel u:r:shell:s0`) so external
+# helpers (`head`, `tr`, `rm`, `getprop`, etc.) can run inside the
+# vendor context.
+
+init_daemon_domain(vendor_fp_autocalib)
+
+# Allow entrypoint execution and transitively call vendor shared libs.
+allow vendor_fp_autocalib vendor_fp_autocalib_exec:file { entrypoint execute execute_no_trans getattr open read };
+allow vendor_fp_autocalib vendor_file:file { execute execute_no_trans getattr open read };
+allow vendor_fp_autocalib vendor_file:lnk_file { read getattr };
+allow vendor_fp_autocalib vendor_file:dir { search };
+
+# Wipe /data/vendor/goodix/* and /mnt/vendor/persist/goodix/*.
+allow vendor_fp_autocalib fingerprint_vendor_data_file:dir { add_name remove_name reparent rmdir search write };
+allow vendor_fp_autocalib fingerprint_vendor_data_file:file { getattr unlink };
+
+# Reading DRM panel info from sysfs. Use the broad sysfs class only —
+# sysfs_drm is not declared on older Android baselines (pre-13).
+allow vendor_fp_autocalib sysfs:file { getattr open read };
+allow vendor_fp_autocalib sysfs:dir { search };
+
+# Get/set persist.sys.fp.last_panel_id and persist.sys.fp.last_calib_ts.
+get_prop(vendor_fp_autocalib, vendor_fp_prop)
+set_prop(vendor_fp_autocalib, vendor_fp_prop)

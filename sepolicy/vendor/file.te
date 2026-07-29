@@ -76,3 +76,7 @@ allow shell proc_overcommit_memory:file r_file_perms;
 
 #GPU
 type vendor_sysfs_gpu, fs_type, sysfs_type;
+
+# Fingerprint auto-calibration
+type vendor_fp_autocalib, domain;
+type vendor_fp_autocalib_exec, exec_type, vendor_file_type, file_type;

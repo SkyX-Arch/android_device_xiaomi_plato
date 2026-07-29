@@ -24,3 +24,7 @@ ro.vendor.sensors.xiaomi.                   u:object_r:vendor_sensors_prop:s0
 
 # Thermal
 vendor.sys.thermal.data.path                u:object_r:vendor_thermal_prop:s0
+
+# Fingerprint auto-calibration (persist.vendor.sys.fp.last_panel_id, persist.vendor.sys.fp.last_calib_ts)
+persist.vendor.sys.fp.last_panel_id               u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp.last_calib_ts               u:object_r:vendor_fp_prop:s0

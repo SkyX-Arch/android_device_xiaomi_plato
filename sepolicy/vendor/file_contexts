@@ -294,3 +294,7 @@
 /vendor/lib(64)?/hw/vendor\.xiaomi\.hardware\.misys@.*-impl\.so             u:object_r:vendor_file:s0
 /vendor/lib(64)?/hw/vendor\.xiaomi\.hardware\.displayfeature@.*-impl\.so    u:object_r:vendor_file:s0
 /vendor/lib(64)?/hw/displayfeature\.default\.so                             u:object_r:vendor_file:s0
+
+# fp-autocalib
+/vendor/bin/fp-autocalib                                                   u:object_r:vendor_fp_autocalib_exec:s0
+/vendor/bin/fp-autocalib-gate.sh                                           u:object_r:vendor_fp_autocalib_exec:s0

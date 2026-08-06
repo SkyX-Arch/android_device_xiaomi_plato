@@ -11,3 +11,10 @@ allow hal_fingerprint_default vendor_touchfeature_device:chr_file rw_file_perms;
 allow hal_fingerprint_default vendor_fingerprint_sysfs:file rw_file_perms;
 
 allow hal_fingerprint_default sysfs_wake_lock:file rw_file_perms;
+
+# [UDFPS screen-off wake] /dev/uinput chr_file access from hal_fingerprint_default
+# so the FOD poll thread can inject KEY_WAKEUP events into the kernel
+# input subsystem. The kernel labels /dev/uinput as uhid_device per upstream
+# AOSP/CrDroid base policy. uhid_node is the older Android-Q labeling; if
+# your tree predates Q serialization, add a parallel rule.
+allow hal_fingerprint_default uhid_device:chr_file rw_file_perms;

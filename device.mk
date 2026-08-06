@@ -398,6 +398,12 @@ $(call soong_config_set_bool, vibrator, vibratortargets, vibratoraidlV2target)
 $(call inherit-product, vendor/qcom/opensource/vibrator/vibrator-vendor-product.mk)
 
 # Wi-Fi
+# The MT6895 vendor WLAN firmware uses the pre-U QPR2 link-layer-stats
+# wire layout. Keep the generic Wi-Fi HAL parser on that ABI; without this
+# flag Android's newer MLO layout interprets the legacy peer fields as a
+# bogus num_rate (for example 1261 in a 1236-byte response).
+$(call soong_config_set_bool,mediatek_wifi_hal,use_pre_u_qpr2_struct,true)
+
 PRODUCT_CFI_INCLUDE_PATHS += hardware/mediatek/wlan/wpa_supplicant_8_lib
 
 PRODUCT_COPY_FILES += \

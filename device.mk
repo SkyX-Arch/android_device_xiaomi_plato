@@ -373,7 +373,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/mediatek/libaedv \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/xiaomi
+    hardware/xiaomi \
+    hardware/google/pixel/power-libperfmgr \
+    hardware/google/pixel/pixelstats
 
 # Speed profile services and wifi-service to reduce RAM and storage.
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile

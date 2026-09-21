@@ -18,9 +18,10 @@ genfscon sysfs /devices/platform/11019000.spi5/spi_master/spi5/spi5.0/authen_fd/
 genfscon sysfs /devices/platform/fingerprint                                                       u:object_r:vendor_fingerprint_sysfs:s0
 
 # GPU
-genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode                              u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/js_scheduling_period                                u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/dvfs_period                                         u:object_r:vendor_sysfs_gpu:s0
+# js_ctx_scheduling_mode, js_scheduling_period and dvfs_period are already labelled
+# sysfs_gpu in device/mediatek/sepolicy_vndr/base/vendor/genfs_contexts. genfscon
+# entries cannot be overridden by the device policy (checkpolicy rejects duplicates),
+# so they are left to the MTK base policy.
 
 # Torch
 genfscon sysfs /devices/virtual/flashlight_core/flashlight/torchbrightness              u:object_r:vendor_torch_sysfs:s0

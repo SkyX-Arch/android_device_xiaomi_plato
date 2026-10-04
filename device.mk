@@ -139,6 +139,14 @@ PRODUCT_PACKAGES += \
 # Dexpreopt
 WITH_DEXPREOPT_DEBUG_INFO := false
 
+# MediaTek's prebuilt boot jars subclass framework classes that are `final` in
+# AOSP. hardware/mediatek/frameworks applies a build-time patch that removes the
+# `final` keyword (see mediatek-frameworks.mk), fixing this at the source for
+# both the build and the runtime. This flag is a safety net for environments
+# where that patch cannot be applied (e.g. a read-only source tree), so boot
+# image generation still succeeds.
+PRODUCT_DEX_PREOPT_BOOT_FLAGS += --no-abort-on-hard-verifier-error
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.3-service \

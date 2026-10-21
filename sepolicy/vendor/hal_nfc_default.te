@@ -1,3 +1,8 @@
 allow hal_nfc_default vendor_configs_file:dir r_dir_perms;
 allow hal_nfc_default vendor_configs_file:file r_file_perms;
+# NfcConfig::loadConfig() stats /data/vendor/nfc/libnfc-nci-update.conf
+# (NCI config override). The search permission is needed to walk the
+# directory; if an override file is present it is opened and parsed as well.
+allow nfc nfc_data_vendor_file:dir search;
+allow nfc nfc_data_vendor_file:file { getattr open read };
 

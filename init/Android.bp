@@ -6,6 +6,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.vnd_plato.nfc.rc",
+    src: "init.vnd_plato.nfc.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "fstab.mt6895",
     src: "fstab.mt6895",
     vendor: true,

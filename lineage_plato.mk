@@ -38,8 +38,8 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_CHARACTERISTICS := nosdcard
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="plato_global-user 15 AP3A.240905.015.A2 OS2.0.215.0.VLQMIXM release-keys" \
-    BuildFingerprint=Xiaomi/plato_global/plato:15/AP3A.240905.015.A2/OS2.0.215.0.VLQMIXM:user/release-keys \
+    BuildDesc="plato_global-user 12 SP1A.210812.016 OS2.0.219.0.VLQMIXM release-keys" \
+    BuildFingerprint=Xiaomi/plato_global/plato:12/SP1A.210812.016/OS2.0.219.0.VLQMIXM:user/release-keys \
     DeviceName=$(PRODUCT_SYSTEM_DEVICE) \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
 

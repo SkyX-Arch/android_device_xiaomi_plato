@@ -62,9 +62,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
-    update_verifier \
-    Datura \
-    Panic
+    update_verifier
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \

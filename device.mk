@@ -62,7 +62,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
-    update_verifier
+    update_verifier \
+    Datura \
+    Panic
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -426,6 +428,10 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     hostapd \
     android.hardware.wifi-service
+
+# Connectivity
+PRODUCT_PACKAGES += \
+    conninfra_loader
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay

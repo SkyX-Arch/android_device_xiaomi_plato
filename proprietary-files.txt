@@ -180,7 +180,6 @@ vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
 # Connectivity
-vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
 vendor/etc/init/init.conninfra.rc
 vendor/firmware/conninfra.cfg
